@@ -1,15 +1,35 @@
 <script setup>
 const zip = ref(null)
 const vehicle = ref(null)
+const error = ref({
+  zip: false,
+  condition: false
+})
+
+const showError = computed(() => {
+  if (!zip.value) {
+    error.value.zip = true
+  } else {
+    error.value.zip = false
+  }
+  if (!zip.value) {
+    error.value.condition = true
+  } else {
+    error.value.condition = false
+  }
+  return error.value.zip || error.value.condition
+})
 
 const handleForm = () => {
-  return navigateTo({
+  if (!showError.value) {
+    return navigateTo({
     name: 'cars',
     query: {
       zip: zip.value,
       vehicle_condition: vehicle.value
     }
   })
+  }
 }
 </script>
 
@@ -21,12 +41,13 @@ const handleForm = () => {
         <label for="search">Search ZIP:</label>
         <input type="number" placeholder="Search ZIP..." name="search" v-model="zip">
       </div>
+      <div v-if="error.zip" class="error">Zip must not be empty</div>
 
       <div class="col-2">
         <p>Vehicle condition:</p>
         <div>
           <label class="label-container">New
-            <input type="radio" name="radio" checked="checked" value="new" v-model="vehicle">
+            <input type="radio" name="radio" value="new" v-model="vehicle">
             <span class="checkmark"></span>
           </label>
         </div>
@@ -38,6 +59,7 @@ const handleForm = () => {
          <span class="checkmark"></span>
         </label>
       </div>
+      <div v-if="error.condition" class="error">Please choose condition</div>
 
       <button type="submit">Submit</button>
     </form>
@@ -57,7 +79,7 @@ const handleForm = () => {
     outline: 1px solid black;
     border-radius: 10px;
     width: 40%;
-    height: 250px;
+    min-height: 250px;
     padding: 20px;
   }
 
@@ -161,6 +183,11 @@ const handleForm = () => {
 	  height: 8px;
 	  border-radius: 50%;
     background: white;
+  }
+
+  .error {
+    color: red;
+    font-size: 14px;
   }
 
 </style>
