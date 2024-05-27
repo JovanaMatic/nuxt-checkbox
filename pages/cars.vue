@@ -1,12 +1,13 @@
-<template>
-  <div>
-    <HomeSearch />
-  </div>
-</template>
-
 <script setup>
 
 </script>
+
+<template>
+  <div>
+    <h1>Cars page</h1>
+  </div>
+</template>
+
 
 <style scoped>
 
