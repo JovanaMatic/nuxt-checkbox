@@ -27,6 +27,11 @@
     background-color: #04AA6D;
   }
 
+  nav {
+    position: fixed;
+    width: 100%;
+  }
+
   ul {
     list-style-type: none;
     margin: 0;

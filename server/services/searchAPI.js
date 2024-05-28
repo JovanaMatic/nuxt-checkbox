@@ -1,6 +1,6 @@
 import apiCall from '../utils/apiCall'
 
-export default (type = 'listings', params) => {
+export default (params) => {
   const defaultParams = {
     format: 'json',
     page: 1,

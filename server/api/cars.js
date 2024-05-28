@@ -4,7 +4,7 @@ export default eventHandler(async (event) => {
   const query = getQuery(event)
   const facets = ['body_style', 'vehicle_condition', 'price', 'mileage', 'year', 'exterior_color', 'fuel', 'transmission', 'engine', 'feature_groups', 'cap_financing', 'drive_type', 'apollo_displayed_badge']
 
-  const data = await searchAPI('listings', {
+  const data = await searchAPI({
     ...query,
     'f.feature_groups.facet.show_all_multivalued_counts': true,
     'f.dealer_badges.facet.show_all_multivalued_counts': true,
