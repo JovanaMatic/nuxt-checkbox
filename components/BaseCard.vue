@@ -5,7 +5,6 @@
       required: true
     }
   })
-  console.log(props.car)
 </script>
 <template>
   <div class="card">

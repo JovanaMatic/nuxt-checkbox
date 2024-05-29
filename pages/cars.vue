@@ -5,7 +5,6 @@
     middleware: ['fetch']
   })
   const search = useSearchStore()
-  console.log(search.searchData)
 </script>
 
 <template>

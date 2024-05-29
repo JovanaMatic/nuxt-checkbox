@@ -25,7 +25,7 @@ const handleForm = () => {
     return navigateTo({
     name: 'cars',
     query: {
-      zip: zip.value,
+      location: zip.value,
       vehicle_condition: vehicle.value
     }
   })
@@ -47,7 +47,7 @@ const handleForm = () => {
         <p>Vehicle condition:</p>
         <div>
           <label class="label-container">New
-            <input type="radio" name="radio" value="new" v-model="vehicle">
+            <input type="radio" name="radio" value="New" v-model="vehicle">
             <span class="checkmark"></span>
           </label>
         </div>
@@ -55,7 +55,7 @@ const handleForm = () => {
 
       <div>
         <label class="label-container">Used
-         <input type="radio" name="radio" value="used" v-model="vehicle">
+         <input type="radio" name="radio" value="Used" v-model="vehicle">
          <span class="checkmark"></span>
         </label>
       </div>

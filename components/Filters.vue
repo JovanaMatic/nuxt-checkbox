@@ -26,7 +26,7 @@
       </div>
 
       <label class="label-container">Zip
-         <input type="number" name="zip" value="zip" v-model="zip">
+         <input type="number" name="zip" v-model="zip">
         </label>
     </form>
   </div>

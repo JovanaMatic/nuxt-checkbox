@@ -1,10 +1,9 @@
-export default async (url) => {
-  const defaultOptions = {
-    method: 'GET'
-  }
+export default async (url, options, params) => {
+  console.log('url, options, params')
+  console.log(url, options, params)
   try {
     const apiResponse = await $fetch(url, {
-      ...defaultOptions
+      ...options
     })
     return apiResponse
   } catch (err) {

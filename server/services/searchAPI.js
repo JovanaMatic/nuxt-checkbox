@@ -1,6 +1,6 @@
 import apiCall from '../utils/apiCall'
 
-export default (params) => {
+export default async (params) => {
   const defaultParams = {
     format: 'json',
     page: 1,
@@ -11,9 +11,27 @@ export default (params) => {
 
 
   params = { ...defaultParams, ...params }
-  params.apikey = ''
 
-  const baseURL = ''
+  if (params.zip) {
+    params.tlocation = params.zip
+    delete params.zip
+  }
 
-  return apiCall(baseURL, { query: params })
+  if (params.location) {
+    params.tlocation = params.location
+    delete params.location
+  }
+
+  try {
+    const apiData = await $fetch('https://dspappfeed.data.auto-prod.vast.com/listings/-/cars?apikey=&filter_location_range=n&format=json', { 
+      method: 'GET',
+      query: params
+     })
+     return apiData
+
+  } catch (err) {
+    console.log(err)
+  } finally {
+    console.log('API call completed')
+  }
 }
