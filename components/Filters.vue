@@ -33,14 +33,6 @@
 </template>
 
 <style scoped>
-  .side-container {
-    width: 200px;
-    background-color: #f1ecec;
-    padding: 10px;
-    border-radius: 5px;
-    margin-left: 10px;
-  }
-
   .col-condition {
     display: flex;
     justify-content: space-between;
