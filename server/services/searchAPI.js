@@ -23,7 +23,7 @@ export default async (params) => {
   }
 
   try {
-    const apiData = await $fetch('https://dspappfeed.data.auto-prod.vast.com/listings/-/cars?apikey=&filter_location_range=n&format=json', { 
+    const apiData = await $fetch('', { 
       method: 'GET',
       query: params
      })

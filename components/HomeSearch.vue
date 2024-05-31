@@ -1,6 +1,6 @@
 <script setup>
 const zip = ref(null)
-const vehicle = ref(null)
+const vehicle = ref('New')
 const error = ref({
   zip: false,
   condition: false
@@ -47,7 +47,7 @@ const handleForm = () => {
         <p>Vehicle condition:</p>
         <div>
           <label class="label-container">New
-            <input type="radio" name="radio" value="New" v-model="vehicle">
+            <input type="radio" checked value="New" v-model="vehicle">
             <span class="checkmark"></span>
           </label>
         </div>
@@ -55,7 +55,7 @@ const handleForm = () => {
 
       <div>
         <label class="label-container">Used
-         <input type="radio" name="radio" value="Used" v-model="vehicle">
+         <input type="radio" value="Used" v-model="vehicle">
          <span class="checkmark"></span>
         </label>
       </div>
