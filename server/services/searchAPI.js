@@ -1,5 +1,3 @@
-import apiCall from '../utils/apiCall'
-
 export default async (params) => {
   const defaultParams = {
     format: 'json',

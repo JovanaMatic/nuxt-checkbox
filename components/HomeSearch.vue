@@ -12,12 +12,7 @@ const showError = computed(() => {
   } else {
     error.value.zip = false
   }
-  if (!zip.value) {
-    error.value.condition = true
-  } else {
-    error.value.condition = false
-  }
-  return error.value.zip || error.value.condition
+  return error.value.zip
 })
 
 const handleForm = () => {
